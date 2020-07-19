@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {GlobalContext} from '../Context/GlobalStatePositive';
 import {GlobalContextt} from '../Context/GlobalStateNegative';
-import { Expense } from './Expense';
+
 
 
 export const AddTransaction = () => {
