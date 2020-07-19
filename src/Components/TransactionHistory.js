@@ -1,14 +1,17 @@
 import React, {useContext} from 'react';
 
 //import the global context
-import {GlobalContext} from '../Context/GlobalState';
+import {GlobalContext} from '../Context/GlobalStatePositive';
+import {GlobalContextt} from '../Context/GlobalStateNegative';
 
 //import transaction
 import {Transaction} from './Transaction';
+import {Expense} from './Expense';
 
 export const TransactionHistory = () => {
    
     const {transactions} = useContext(GlobalContext);
+    const {Expensetransactions} = useContext(GlobalContextt);
     
 
     return (
@@ -20,7 +23,7 @@ export const TransactionHistory = () => {
             <ul className="list">
             {transactions.map(transaction =>(
 
-            <Transaction transaction={transaction}/>
+            <Transaction key={transaction.id} transaction={transaction}/>
             ))}
            
 
@@ -32,12 +35,11 @@ export const TransactionHistory = () => {
 
             <h3 >Expenses</h3>
             <ul className="list">
-                <li className="minus"> Bills 
-                <span>-$500</span>
-                <button className="delete-btn">X</button>
+            {Expensetransactions.map(expense =>(
 
-
-               </li>
+<Expense key={expense.id} expense={expense}/>
+))}
+                
             </ul>
             </div>
         </div>

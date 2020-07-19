@@ -9,7 +9,8 @@ import TransactionHistory from './Components/TransactionHistory';
 import AddTransaction from './Components/AddTransaction';
 
 //Import the global provider
-import {GlobalProvider} from './Context/GlobalState';
+import {GlobalProvider} from './Context/GlobalStatePositive';
+import {GlobalProviderr} from './Context/GlobalStateNegative';
 
 
 import './App.css';
@@ -18,6 +19,7 @@ import './App.css';
 function App() {
   return (
     <GlobalProvider>
+      <GlobalProviderr>
      <Header/>
      <div className="container">
      <Balance/>
@@ -25,7 +27,7 @@ function App() {
      <TransactionHistory/>
      <AddTransaction/>
      </div>
-
+     </GlobalProviderr>
     </GlobalProvider>
   );
 }
